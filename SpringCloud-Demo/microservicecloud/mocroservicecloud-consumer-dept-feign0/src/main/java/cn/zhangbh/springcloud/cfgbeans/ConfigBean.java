@@ -1,5 +1,7 @@
 package cn.zhangbh.springcloud.cfgbeans;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RetryRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +16,9 @@ public class ConfigBean {
         return new RestTemplate();
     }
 
-    /*@Bean
+    @Bean
     public IRule myRole() {
         //return new RandomRule();//达到目的，用我们重新选择的随机算法提到默认的轮询
         return new RetryRule();
-    }*/
+    }
 }
